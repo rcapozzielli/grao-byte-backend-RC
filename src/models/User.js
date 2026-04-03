@@ -18,6 +18,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "A senha é obrigatória"],
     },
+    role: {
+      type: String,
+      enum: ["admin", "employee"],
+      default: "employee",
+    },
   },
   { timestamps: true }
 );
